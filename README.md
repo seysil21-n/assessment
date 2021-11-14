@@ -66,7 +66,7 @@ Product Description Page | PDP: *In eCommerce, the pages that present the descri
     * What you intended to accomplish in this assessment
     * What you’d do as next steps if you had more time
     * Any feedback you may have for Layer0 regarding the process.
-3. Create a new repository on github, push your code to the repo including all git history, and share with the following gh handles (`patricksaw`, `howdiz`, `letrest`, `proinfo` )
+3. Create a new repository on github, push your code to the repo including all git history, and share with the following gh handles (`patricksaw`, `howdiz`, `letrest`, `proinfo`, `rishi-raj-jain` )
 
 ## Part 2 - Performance Comparison (~ 30 minutes)
 ***
