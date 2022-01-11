@@ -3,7 +3,6 @@ import Request from '@layer0/core/router/Request'
 import Response from '@layer0/core/router/Response'
 
 export default function transform(response: Response, request: Request) {
-
   if (response.body) {
     const $ = cheerio.load(response.body)
 
