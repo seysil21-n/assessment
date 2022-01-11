@@ -1,6 +1,6 @@
 import cheerio from 'cheerio'
-import Response from '@layer0/core/router/Response'
 import Request from '@layer0/core/router/Request'
+import Response from '@layer0/core/router/Response'
 import { injectBrowserScript } from '@layer0/starter'
 
 export default function transform(response: Response, request: Request) {
@@ -21,30 +21,31 @@ export default function transform(response: Response, request: Request) {
     $('a').map((i, el) => {
       const oldHref = $(el).attr('href') || ''
       const newHref = oldHref.replace('https://www.lushusa.com/', '/')
-      $(el).attr('href',newHref)
+      $(el).attr('href', newHref)
     })
 
     // PLP relativizing image SRCs
-    $('img.component-image.position-absolute.promotion-impression-img').first().map((i, el) => {
-      const oldSrc = $(el).attr('src')?.trim() || ''
-      const newSrc = oldSrc.replace('https://www.lushusa.com/', '/')
-      $(el).attr('src',newSrc)
-    })
-    $('.plp-banner-top-inner img.plp-banner-top-image').first().map((i, el) => {
-      const oldSrc = $(el).attr('src')?.trim() || ''
-      const newSrc = oldSrc.replace('https://www.lushusa.com/', '/')
-      $(el).attr('src',newSrc)
-    })
+    $('img.component-image.position-absolute.promotion-impression-img')
+      .first()
+      .map((i, el) => {
+        const oldSrc = $(el).attr('src')?.trim() || ''
+        const newSrc = oldSrc.replace('https://www.lushusa.com/', '/')
+        $(el).attr('src', newSrc)
+      })
+    $('.plp-banner-top-inner img.plp-banner-top-image')
+      .first()
+      .map((i, el) => {
+        const oldSrc = $(el).attr('src')?.trim() || ''
+        const newSrc = oldSrc.replace('https://www.lushusa.com/', '/')
+        $(el).attr('src', newSrc)
+      })
     $('.search-results .product-tile-image.lazyload').map((i, el) => {
-      const dataSrc = $(el).attr('data-src') || "";
+      const dataSrc = $(el).attr('data-src') || ''
       const newUrl = dataSrc?.replace('https://www.lushusa.com/', '/')
-      $(el).attr('src', newUrl)
-           .attr('data-src', newUrl)
+      $(el).attr('src', newUrl).attr('data-src', newUrl)
     })
 
     // PDP
-
-
 
     response.body = $.html()
   }

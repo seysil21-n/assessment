@@ -8,7 +8,9 @@ async function lateLoadContent() {
   const root = document.createElement('html')
   root.innerHTML = html
   const elements = Array.from(document.querySelectorAll('[data-moov-replace]'))
-  const personalizedElements = Array.from(root.querySelectorAll('[data-moov-replace]'))
+  const personalizedElements = Array.from(
+    root.querySelectorAll('[data-moov-replace]')
+  )
 
   for (let i = 0; i < personalizedElements.length; i++) {
     const el = personalizedElements[i]
@@ -22,7 +24,6 @@ async function lateLoadContent() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-
   // The XDN Devtools is a widget that helps developers understand how their site interacts with the XDN
   // For more details see - https://developer.moovweb.com/guides/devtools
   // Comment out for easier speed measurements
@@ -30,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // @ts-ignore
   install({
-
     includeCacheMisses: true, // DISABLE THIS LINE IN PRODUCTION
 
     // watch: [
@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //     }
     //   },
     // ],
-
   })
 
   // if (window.location.pathname.indexOf('/content') !== 0) {

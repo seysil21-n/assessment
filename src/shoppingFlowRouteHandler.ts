@@ -1,8 +1,14 @@
+import transform from './transform'
 import { CACHE_PAGES } from './cache'
 import { RouteHandler } from '@layer0/core/router/Router'
-import transform from './transform'
 
-const handler: RouteHandler = async ({ cache, removeUpstreamResponseHeader, setResponseHeader, updateResponseHeader, proxy }) => {
+const handler: RouteHandler = async ({
+  cache,
+  removeUpstreamResponseHeader,
+  setResponseHeader,
+  updateResponseHeader,
+  proxy,
+}) => {
   cache(CACHE_PAGES)
   removeUpstreamResponseHeader('set-cookie') // The presence of a set-cookie header would prevent the response from being cached, so ensure set-cookie headers are removed.
 
