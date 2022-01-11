@@ -24,8 +24,8 @@ async function lateLoadContent() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  // The XDN Devtools is a widget that helps developers understand how their site interacts with the XDN
-  // For more details see - https://developer.moovweb.com/guides/devtools
+  // The Layer0 Devtools is a widget that helps developers understand how their site interacts with the Layer0
+  // For more details see - https://docs.layer0.co/guides/devtools
   // Comment out for easier speed measurements
   installDevtools()
 

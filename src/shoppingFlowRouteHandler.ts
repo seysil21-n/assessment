@@ -13,7 +13,7 @@ const handler: RouteHandler = async ({
   removeUpstreamResponseHeader('set-cookie') // The presence of a set-cookie header would prevent the response from being cached, so ensure set-cookie headers are removed.
 
   // convert absolute redirects to origin to relative so that the user isn't transferred to the origin.
-  // NOTE: make sure this exactly matches the origin host in xdn.config.js!
+  // NOTE: make sure this exactly matches the origin host in layer0.config.js!
   setResponseHeader('cache-control', 'public, max-age=86400') // change the cache headers to be cachable
 
   // ENTER YOUR WEBSITE DOMAIN NAME //
