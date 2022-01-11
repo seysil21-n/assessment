@@ -1,11 +1,8 @@
 import cheerio from 'cheerio'
 import Request from '@layer0/core/router/Request'
 import Response from '@layer0/core/router/Response'
-import { injectBrowserScript } from '@layer0/starter'
 
 export default function transform(response: Response, request: Request) {
-  // inject browser.ts into the document returned from the origin
-  injectBrowserScript(response)
 
   if (response.body) {
     const $ = cheerio.load(response.body)

@@ -1,10 +1,8 @@
 import { CACHE_ASSETS } from './cache'
 import { Router } from '@layer0/core/router'
-import { starterRoutes } from '@layer0/starter'
 import shoppingFlowRouteHandler from './shoppingFlowRouteHandler'
 
 export default new Router()
-  .use(starterRoutes)
 
   // Home page
   .match('/', shoppingFlowRouteHandler)
@@ -15,12 +13,13 @@ export default new Router()
 
   // PDP pages
 
-  // example route for cacheable assets:
+  // Example route for cacheable assets
   .match('/images/:path*', ({ cache, proxy }) => {
     cache(CACHE_ASSETS)
     return proxy('origin')
   })
 
+  // Layer0: Service Worker and Browser.js
   .match('/service-worker.js', ({ serviceWorker }) =>
     serviceWorker('dist/service-worker.js')
   )
@@ -29,7 +28,7 @@ export default new Router()
     return serveStatic('dist/browser.js')
   })
 
-  // fallback route for all other requests:
+  // Fallback route for all other requests
   .fallback(({ proxy }) => {
     proxy('origin')
   })

@@ -17,7 +17,7 @@ const handler: RouteHandler = async ({
   setResponseHeader('cache-control', 'public, max-age=86400') // change the cache headers to be cachable
 
   // ENTER YOUR WEBSITE DOMAIN NAME //
-  updateResponseHeader('location', /https:\/\/www.lushusa.com\//gi, '/')
+  updateResponseHeader('location', /https:\/\/www\.lushusa\.com\//gi, '/')
 
   proxy('origin', { transformResponse: transform }) // Origin pages transformations
 }
