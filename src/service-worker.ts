@@ -31,6 +31,12 @@ new Prefetcher({
         as: 'image',
         callback: deepFetchPLPImagesTwo,
       },
+      {
+        selector: 'pdp-carousel-image',
+        maxMatches: 10,
+        attribute: 'src',
+        as: 'image'
+      }
     ]),
   ],
 }).route()
@@ -57,3 +63,4 @@ function deepFetchPLPImagesTwo({ $el, el, $ }: DeepFetchCallbackParam) {
   console.log(`------------\nPrefetching PLP: ${url}------------\n`)
   prefetch(url, 'image')
 }
+

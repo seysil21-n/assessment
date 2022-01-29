@@ -18,6 +18,31 @@ export default new Router()
     cache(CACHE_ASSETS)
     return proxy('origin')
   })
+  .match('/bath/:path*', ({ cache, proxy }) => {
+    cache(CACHE_ASSETS)
+    return proxy('origin')
+  })
+
+  .match('/hair/:path*', ({ cache, proxy }) => {
+    cache(CACHE_ASSETS)
+    return proxy('origin')
+  })
+
+  .match('/face/:path*', ({ cache, proxy }) => {
+    cache(CACHE_ASSETS)
+    return proxy('origin')
+  })
+
+  .match('/body/:path*', ({ cache, proxy }) => {
+    cache(CACHE_ASSETS)
+    return proxy('origin')
+  })
+
+  // .match('/dw/image/v2/', ({cache, serveStatic}) => {
+  //   cache(CACHE_ASSETS)
+  //   return serveStatic('dist/browser.js')
+  // })
+
 
   // Layer0: Service Worker and Browser.js
   .match('/service-worker.js', ({ serviceWorker }) =>
@@ -27,6 +52,8 @@ export default new Router()
     cache(CACHE_ASSETS)
     return serveStatic('dist/browser.js')
   })
+
+
 
   // Fallback route for all other requests
   .fallback(({ proxy }) => {
