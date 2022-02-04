@@ -3,11 +3,6 @@
 2. I was able to implement deep fetching an prefetching for the Product Description Pages by matching the routes under the various categories
 3. I was able to implement deep fetching of the images on the Product description pages by finding the classnames and then appended the deepFetch object to the existing ones that deep fetched images of the Product description pages
 
-
-# Feedback to layer0
-I had a great time working with your service, however , being a first time layer0 user i found it a little challenging trying to go by the documentation. 
-
-
 # Part 2 - Performance comparison 
 After running all the test required to run:
 
